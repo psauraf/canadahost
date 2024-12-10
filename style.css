@@ -1,0 +1,208 @@
+@import './assets/fonts/fonts.css';
+@import './styles_no_modificar.css';
+
+/* RESET -------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e0e0e0;
+    line-height: 24px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* HEADER AREA ------------------------------------------------- */
+.header-menu {
+    background-color: #2b2b2b;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.header-logo {
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.header-logo img {
+    max-height: 80px;
+    margin-top: 22px;
+}
+
+
+.header-menu .menu-item {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+    color: #fff;
+    position: relative;
+}
+
+.header-menu .menu-item.active {
+    color: #ed1b24;
+}
+
+.header-menu .menu-item:hover {
+    color: #ed1b24;
+}
+
+.header-menu .menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ed1b24;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.header-menu .menu-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* PLANS AREA ------------------------------------------------- */
+.plans-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    z-index: 0;
+}
+
+.plan-item {
+    background-color: #fff;
+    width: 320px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.plan-item:hover {
+    border: 1px solid #333;
+    transform: scale(1.05);
+}
+
+.plan-item .plan-header {
+    font-size: 35px;
+    margin: 20px 0;
+}
+
+.plan-item .plan-pricing {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.plan-item .start-price {
+    font-size: 48px;
+    line-height: 56px;
+    margin: 0;
+    color: #333;
+    display: block;
+}
+
+.plan-item .btn-order {
+    padding: 12px 24px;
+    background-color: #e0e0e0;
+    color: #333;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.plan-item .btn-order:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.plan-item .divider {
+    border-top: 1px dashed #e0e0e0;
+    margin: 20px 0;
+}
+
+.plan-item .plan-info .avatar {
+    float: left;
+    margin-right: 15px;
+    margin-top: 10px;
+    height: 60px;
+    width: auto;
+}
+
+/* Plan Popular */
+.plan-item.popular {
+    background-color: #ff0000;
+    color: #fff;
+    position: relative;
+    width: 340px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.plan-item.popular .plan-popular-tag {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #ff0000;
+    font-family: Oswald, sans-serif;
+    font-size: 30px;
+    padding: 10px 25px;
+    text-align: center;
+}
+
+.plan-item.popular:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER AREA ------------------------------------------------- */
+.footer-wrapper {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* MEDIA QUERIES ------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    .plans-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
